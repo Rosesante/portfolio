@@ -1,0 +1,68 @@
+{% extends 'sante/base.html' %}
+
+{% block title %}{{ info.full_name }} - Portfolio{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="hero-content text-center">
+    <img src="{{ info.profile_image.url }}" class="hero-img" alt="Profile">
+    <h1 class="fade-in">{{ info.full_name }}</h1>
+    <p class="typing">{{ info.bio }}</p>
+
+    <a href="/contact/" class="btn btn-primary btn-lg mt-3">
+      Hire Me 
+    </a>
+     <a href="/about/" class="btn btn-primary btn-lg mt-3">Learn More About Me</a>
+  </div>
+</section>
+
+<section class="profile mt-5">
+    <div class="profile-img float-start me-4">
+        <img src="{{ info.profile_image.url }}" alt="Rosesante" class="img-thumbnail" width="200">
+    </div>
+    <div class="profile-text">
+        <h2>Rosesante</h2>
+        <p class="title">Web Developer</p>
+        <p>
+            I'm Rosesante, a passionate web developer specializing in
+            Django, Python, HTML, CSS, and JavaScript.
+        </p>
+    </div>
+</section>
+
+<h3 class="mt-5">About Me</h3>
+<p>{{ info.bio }}</p>
+
+
+<h3 class="mt-5 text-center">My Skills</h3>
+<div class="row mt-4">
+    {% for skill in skills_list %}
+    <div class="col-md-3 col-sm-6 mb-4">
+        <div class="skill-card text-center p-3 shadow-sm">
+            <h5>{{ skill }}</h5>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<h3>Projects</h3>
+<div class="projects-container">
+    {% for project in projects %}
+    <div class="project-card">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+        <h4>{{ project.title }}</h4>
+        <p>{{ project.description }}</p>
+        <a href="{{ project.link }}" class="btn btn-primary">View Project</a>
+    </div>
+    {% endfor %}
+</div>
+
+
+<h3>Contact</h3>
+<p>Email: {{ info.email }}</p>
+<p>Phone: {{ info.phone }}</p>
+
+{% endblock %}
