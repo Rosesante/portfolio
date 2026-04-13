@@ -1,0 +1,1 @@
+I am a passionate developer focused on building responsive and user-friendly web applications. My portfolio showcases my skills in HTML, CSS, JavaScript, and modern development tools, highlighting my ability to create efficient, visually appealing, and practical solutions.
