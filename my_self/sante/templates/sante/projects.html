@@ -7,34 +7,75 @@
     <h1 class="text-center mb-4">My Projects</h1>
 
     <div class="row">
-        {% for project in projects %}
         <div class="col-md-4 mb-4">
             <div class="card shadow-sm mb-4 project-card">
-                {% if project.image %}
-                <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title}}">
-                {% endif %}
-
+                <img
+                    src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%230d6efd'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='34' fill='white'>Event%20Management</text></svg>"
+                    class="card-img-top"
+                    alt="Event Management System">
                 <div class="card-body">
-                    <h5>{{ project.title }}</h5>
-                    <p>{{ project.description|truncatewords:20 }}</p>
-                    <p class="text-muted">
-                        <strong>Tech:</strong> {{ project.technologies }}
+                    <h5>Event Management System</h5>
+                    <p>
+                        A full event management platform that streamlines event planning, registration,
+                        and attendee communication. It supports secure authentication, organizer dashboards,
+                        and real-time updates for schedules and announcements.
                     </p>
-                </div>
-
-                <div class="card-footer text-center">
-                    {% if project.github_link %}
-                    <a href="{{ project.github_link }}" class="btn btn-outline-dark btn-sm">GitHub</a>
-                    {% endif %}
-                    {% if project.live_demo %}
-                    <a href="{{ project.live_demo }}" class="btn btn-primary btn-sm">Live</a>
-                    {% endif %}
+                    <p class="text-muted">
+                        <strong>Tech:</strong> Django REST Framework (backend), React (frontend)
+                    </p>
                 </div>
             </div>
         </div>
-        {% empty %}
-        <p class="text-center">No projects added yet.</p>
-        {% endfor %}
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm mb-4 project-card">
+                <img
+                    src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%2310b981'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='34' fill='white'>Personal%20Finance</text></svg>"
+                    class="card-img-top"
+                    alt="Personal Finance Tracker">
+                <div class="card-body">
+                    <h5>Personal Finance Tracker</h5>
+                    <p>
+                        A personal finance tracker that helps users record income and expenses, categorize
+                        transactions, and visualize spending habits. The app provides clear summaries and
+                        insights to support smarter budgeting decisions.
+                    </p>
+                    <p class="text-muted">
+                        <strong>Tech:</strong> Django REST Framework (backend), React (frontend)
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm mb-4 project-card">
+                <img
+                    src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'><rect width='100%' height='100%' fill='%236b7280'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='34' fill='white'>Authentication%20System</text></svg>"
+                    class="card-img-top"
+                    alt="Authentication System">
+                <div class="card-body">
+                    <h5>Authentication System</h5>
+                    <p>
+                        A secure login and registration system that lets users create accounts, sign in,
+                        and access protected areas of the application. It includes form validation,
+                        session management, and clean user flows for authentication.
+                    </p>
+                    <p class="text-muted">
+                        <strong>Tech:</strong> HTML, CSS
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body text-center">
+            <h5 class="mb-2">View More Projects</h5>
+            <p class="text-muted mb-3">View full project details and source code on my GitHub account.</p>
+            <a href="https://github.com/Rosesante" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </div>
 
 </div>

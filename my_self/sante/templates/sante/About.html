@@ -14,8 +14,38 @@
             {% endif %}
         </div>
         <div class="col-md-8">
-            <p class="lead">{{ info.bio }}</p>
+            <p class="lead">
+                I’m a web developer focused on building clean, responsive, and user‑friendly web experiences.
+                I enjoy turning ideas into real products, improving performance, and delivering interfaces that are
+                simple to use and easy to maintain.
+            </p>
+            <p class="lead">
+                I collaborate closely with clients and teams, communicate clearly, and deliver on time. Whether it’s
+                a personal portfolio, a business website, or a full web application, I bring a practical, detail‑oriented
+                approach to every project.
+            </p>
         </div>
+    </div>
+
+    <!-- Skills -->
+    <h3 class="mb-3">Skills & Learning Progress</h3>
+    <div class="row">
+        {% for skill in skills_with_meta %}
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <i class="fab {{ skill.icon }} fs-4 text-primary"></i>
+                        <h5 class="mb-0">{{ skill.name }}</h5>
+                    </div>
+                    <p class="text-muted mb-2">Learning progress</p>
+                    <div class="progress" role="progressbar" aria-label="{{ skill.name }} progress" aria-valuenow="{{ skill.progress }}" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-primary" style="width: {{ skill.progress }}%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 
     <!-- Education -->
